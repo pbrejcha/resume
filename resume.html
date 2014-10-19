@@ -1,0 +1,33 @@
+<head>
+    <title>Peter Brejcha Resume</title>
+</head>
+
+
+<!-- Test Templates -->
+
+<template name="home">
+    <h2>Home</h2>
+    <p>You are on the home screen.</p>
+</template>
+
+<template name = 'about'>
+    <h2>About this site</h2>
+</template>
+
+<template name = 'projects'>
+    <h2>Projects</h2>
+    <ul>
+        {{#each projects}}
+        <li>
+            <a href="{{ pathFor 'project' }}"> {{title}} </a>
+        </li>
+        {{/each}}
+    </ul>
+</template>
+
+<template name = 'fullProject'>
+    <h2>{{ title }}</h2>
+    <p>{{ date }}</p>
+    <div>{{duties}}</div>
+    <div>{{env}}</div>
+</template>
