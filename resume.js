@@ -16,10 +16,11 @@ if (Meteor.isClient) {
 //      Session.set("counter", Session.get("counter") + 1);
 //    }
 //  });
-
+    Router.configure({
+        layoutTemplate: 'layout'
+    });
     Router.map(function () {
-        this.route('about');  // By default, path = '/about', template = 'about'
-        this.route('home', {
+        this.route('about', {
             path: '/' //overrides the default '/home'
         });
         this.route('projects', {
