@@ -1,27 +1,15 @@
 Projects = new Meteor.Collection('projects');
 
 if (Meteor.isClient) {
-    // counter starts at 0
-    Session.setDefault("counter", 0);
-
-//  Template.hello.helpers({
-//    counter: function () {
-//      return Session.get("counter");
-//    }
-//  });
-
-//  Template.hello.events({
-//    'click button': function () {
-//      // increment the counter when button is clicked
-//      Session.set("counter", Session.get("counter") + 1);
-//    }
-//  });
     Router.configure({
         layoutTemplate: 'layout'
     });
     Router.map(function () {
         this.route('about', {
-            path: '/' //overrides the default '/home'
+            path: '/'
+        });
+        this.route('work', {
+            path: '/work'
         });
         this.route('projects', {
             data: function () {return {projects: Projects.find()}}  //set template data context
@@ -42,7 +30,8 @@ if (Meteor.isServer) {
         var projects = [
             {
                 title: 'Non-profit Hearing Aid Foundation - Mission Management Tool',
-                date: 'June 2014 - October 2014',
+                startDate: 'June 2014',
+                endDate: 'October 2014',
                 duties: [
                     'Complete rewrite of the Hearing Aid Foundation\'s patient and mission management tool including spreadsheet exporting and a modern Bootstrap interface',
                     'jQuery used for the user interface, jQuery modules managed by Require.JS',
@@ -51,7 +40,8 @@ if (Meteor.isServer) {
             },
             {
                 title: 'Racr (personal project) - Race Management/Leaderboard Tool',
-                date: 'February 2014 - Present',
+                startDate: 'February 2014',
+                endDate: 'Present',
                 duties: [
                     'Creating an application to manage races among leagues, teams, and racers along with leaderboard capabilities',
                     'Node.JS server with the Express.JS framework',
@@ -60,7 +50,8 @@ if (Meteor.isServer) {
             },
             {
                 title: 'Secure Call Provider - Next Generation Platform',
-                date: 'March 2014 - June 2014',
+                startDate: 'March 2014',
+                endDate: 'June 2014',
                 duties: [
                     'Created a next generation platform for providing secure video/phone communications between parties',
                     'Used Angular.JS to create a modular, modern interface',
@@ -69,7 +60,8 @@ if (Meteor.isServer) {
             },
             {
                 title: 'Legal Services Provider - Maintenance & Enhancements',
-                date: 'January 2014 - February 2014',
+                startDate: 'January 2014',
+                endDate: 'February 2014',
                 duties: [
                     'Supported and implemented new features in a legal docket/case management system',
                     'Client-side enghancements made using YUI 3',
@@ -78,7 +70,8 @@ if (Meteor.isServer) {
             },
             {
                 title: 'Legal Services Provider - Document Management',
-                date: 'November 2013 - January 2014',
+                startDate: 'November 2013',
+                endDate: 'January 2014',
                 duties: [
                     'Worked with one other developer to add document association features to the legal docket/case management system, wherein users are able to associate and download documents',
                     'YUI3, Java, Spring Framework'
@@ -87,7 +80,8 @@ if (Meteor.isServer) {
             },
             {
                 title: 'National Drug Retailer - Data De-Identification Application',
-                date: 'August 2013 - November 2013',
+                startDate: 'August 2013',
+                endDate: 'November 2013',
                 duties: [
                     'Created a HIPAA-compliant PHI de-identification single-page application with administrative capabilities',
                     'Used Bootstrap and Angular.JS to create a rich UI',
@@ -96,7 +90,8 @@ if (Meteor.isServer) {
             },
             {
                 title: 'Tasky - Project Management Tool',
-                date: 'July 2013 - August 2013',
+                startDate: 'July 2013',
+                endDate: 'August 2013',
                 duties: [
                     'Task management system for agile projects',
                     'Client UI utilized Backbone.JS and Blueprint css framework',
@@ -105,7 +100,8 @@ if (Meteor.isServer) {
             },
             {
                 title: 'Cars.com - Careers Page',
-                date: 'January 2013 - May 2013',
+                startDate: 'January 2013',
+                endDate: 'May 2013',
                 duties: [
                     'Created a modern careers page under the Cars.com domain',
                     'Wrote an XML-to-JSON converter to transform the job data into usable format for the front-end of the application',

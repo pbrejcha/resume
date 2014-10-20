@@ -7,58 +7,55 @@
 
 <template name="layout">
     <div class="container">
-        <header>
-            {{> nav}}
-        </header>
-            <div class="col-lg-10">{{> yield}}</div>
+        <h1>Peter Brejcha</h1>
+    </div>
+    <div class="container">
+        {{> nav}}
+        <div class="col-lg-10">{{> yield}}</div>
     </div>
 </template>
 
 <template name="nav">
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-items">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{{ pathFor 'about'}}">Peter Brejcha</a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-items">
-                <ul class="navbar-nav">
-                    {{> navItems}}
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <ul class="nav nav-tabs" role="tablist">
+        {{> navItems}}
+    </ul>
 </template>
 
-<template name = 'about'>
+<template name = "about">
     <h2>About this site</h2>
 </template>
 
 <template name="navItems">
     <li>
+        <a href="{{pathFor 'about'}}">About Me</a>
+    </li>
+    <li>
         <a href="{{ pathFor 'projects'}}">Projects</a>
+    </li>
+    <li>
+        <a href="{{pathFor 'work'}}">Work Experience and Education</a>
     </li>
 </template>
 
-<template name = 'projects'>
+<template name = "projects">
     <h2>Projects</h2>
     <ul>
         {{#each projects}}
         <li>
-            <a href="{{ pathFor 'project' }}"> {{title}} </a>
+            <a href="{{ pathFor 'project' }}"> {{title}} : {{startDate}} - {{endDate}}</a>
         </li>
         {{/each}}
     </ul>
 </template>
 
-<template name = 'fullProject'>
+<template name = "fullProject">
     <h2>{{ title }}</h2>
-    <p>{{ date }}</p>
+    <p>{{ startDate }}</p>
+    <p>{{endDate}}</p>
     <div>{{duties}}</div>
     <div>{{env}}</div>
+</template>
+
+<template name="work">
+
 </template>
