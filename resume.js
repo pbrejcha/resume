@@ -27,15 +27,16 @@ if (Meteor.isServer) {
         if(Projects.findOne()){
             Projects.remove({});
         }
+        //Re-pop DB
         var projects = [
             {
                 title: 'Non-profit Hearing Aid Foundation - Mission Management Tool',
                 startDate: 'June 2014',
                 endDate: 'October 2014',
                 duties: [
-                    'Complete rewrite of the Hearing Aid Foundation\'s patient and mission management tool including spreadsheet exporting and a modern Bootstrap interface',
-                    'jQuery used for the user interface, jQuery modules managed by Require.JS',
-                    'Server written with .NET MVC5 and .NET Web API'],
+                    {desc:'Complete rewrite of the Hearing Aid Foundation\'s patient and mission management tool including spreadsheet exporting and a modern Bootstrap interface'},
+                    {desc:'jQuery used for the user interface, jQuery modules managed by Require.JS'},
+                    {desc:'Server written with .NET MVC5 and .NET Web API'}],
                 env: 'jQuery, Require.JS, Bootstrap, .NET MVC 5, .NET Web API'
             },
             {
@@ -43,9 +44,9 @@ if (Meteor.isServer) {
                 startDate: 'February 2014',
                 endDate: 'Present',
                 duties: [
-                    'Creating an application to manage races among leagues, teams, and racers along with leaderboard capabilities',
-                    'Node.JS server with the Express.JS framework',
-                    'UI created with Bootstrap and Angular.JS'],
+                    {desc:'Creating an application to manage races among leagues, teams, and racers along with leaderboard capabilities'},
+                    {desc:'Node.JS server with the Express.JS framework'},
+                    {desc:'UI created with Bootstrap and Angular.JS'}],
                 env: 'Node.JS, Express.JS, Bootstrap, Angular.JS, MongoDB'
             },
             {
@@ -53,9 +54,9 @@ if (Meteor.isServer) {
                 startDate: 'March 2014',
                 endDate: 'June 2014',
                 duties: [
-                    'Created a next generation platform for providing secure video/phone communications between parties',
-                    'Used Angular.JS to create a modular, modern interface',
-                    'Utilized Scala on the Play Framework to provide asynchronous server support'],
+                    {desc:'Created a next generation platform for providing secure video/phone communications between parties'},
+                    {desc:'Used Angular.JS to create a modular, modern interface'},
+                    {desc:'Utilized Scala on the Play Framework to provide asynchronous server support'}],
                 env: 'Angular.JS, Protractor.JS, Karma, Bootstrap, Scala, Play Framework'
             },
             {
@@ -63,9 +64,9 @@ if (Meteor.isServer) {
                 startDate: 'January 2014',
                 endDate: 'February 2014',
                 duties: [
-                    'Supported and implemented new features in a legal docket/case management system',
-                    'Client-side enghancements made using YUI 3',
-                    'Server-side utilized Java on the Spring Framework'],
+                    {desc:'Supported and implemented new features in a legal docket/case management system'},
+                    {desc:'Client-side enghancements made using YUI 3'},
+                    {desc:'Server-side utilized Java on the Spring Framework'}],
                 env: 'Java, Spring Framework, Groovy, Spock test framework, YUI3, MySql'
             },
             {
@@ -73,8 +74,8 @@ if (Meteor.isServer) {
                 startDate: 'November 2013',
                 endDate: 'January 2014',
                 duties: [
-                    'Worked with one other developer to add document association features to the legal docket/case management system, wherein users are able to associate and download documents',
-                    'YUI3, Java, Spring Framework'
+                    {desc:'Worked with one other developer to add document association features to the legal docket/case management system, wherein users are able to associate and download documents'},
+                    {desc:'YUI3, Java, Spring Framework'}
                 ],
                 env: 'Java, Spring Framework, Groovy, Spock test framework, YUI3, MySql'
             },
@@ -83,9 +84,9 @@ if (Meteor.isServer) {
                 startDate: 'August 2013',
                 endDate: 'November 2013',
                 duties: [
-                    'Created a HIPAA-compliant PHI de-identification single-page application with administrative capabilities',
-                    'Used Bootstrap and Angular.JS to create a rich UI',
-                    'Utilized Java on the Spring Framework on the server'],
+                    {desc:'Created a HIPAA-compliant PHI de-identification single-page application with administrative capabilities'},
+                    {desc:'Used Bootstrap and Angular.JS to create a rich UI'},
+                    {desc:'Utilized Java on the Spring Framework on the server'}],
                 env: 'Angular.JS, Bootstrap, Java, Spring Framework, Groovy, Spock test framework'
             },
             {
@@ -93,9 +94,9 @@ if (Meteor.isServer) {
                 startDate: 'July 2013',
                 endDate: 'August 2013',
                 duties: [
-                    'Task management system for agile projects',
-                    'Client UI utilized Backbone.JS and Blueprint css framework',
-                    'Server created with .NET MVC 4'],
+                    {desc:'Task management system for agile projects'},
+                    {desc:'Client UI utilized Backbone.JS and Blueprint css framework'},
+                    {desc:'Server created with .NET MVC 4'}],
                 env: 'Backbone.JS, Blueprint, .NET MVC 4'
             },
             {
@@ -103,9 +104,9 @@ if (Meteor.isServer) {
                 startDate: 'January 2013',
                 endDate: 'May 2013',
                 duties: [
-                    'Created a modern careers page under the Cars.com domain',
-                    'Wrote an XML-to-JSON converter to transform the job data into usable format for the front-end of the application',
-                    'Server written in Java on the Spring Framework'],
+                    {desc:'Created a modern careers page under the Cars.com domain'},
+                    {desc:'Wrote an XML-to-JSON converter to transform the job data into usable format for the front-end of the application'},
+                    {desc:'Server written in Java on the Spring Framework'}],
                 env: 'Can.JS, Java, Spring Framework'
             }
         ];

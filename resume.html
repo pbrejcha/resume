@@ -6,12 +6,25 @@
 <!-- Test Templates -->
 
 <template name="layout">
-    <div class="container">
-        <h1>Peter Brejcha</h1>
+    <div id="wrap">
+        <div class="container">
+            <address>
+                <strong>Peter Brejcha</strong> <br>
+                3217 Garfield Avenue, Apt 1 <br>
+                Minneapolis <br>
+                218-280-9104 <br>
+                peter.brejcha@gmail.com : <a href="http://github.com/pbrejcha">github.pbrejcha</a>
+            </address>
+        </div>
+        <div class="container">
+            {{> nav}}
+            <div class="span10">{{> yield}}</div>
+        </div>
     </div>
-    <div class="container">
-        {{> nav}}
-        <div class="col-lg-10">{{> yield}}</div>
+    <div id="footer">
+        <div class="container">
+            <strong>This repo at <a href="http://github.com/pbrejcha/resume">Resume</a></strong>
+        </div>
     </div>
 </template>
 
@@ -22,7 +35,23 @@
 </template>
 
 <template name = "about">
-    <h2>About this site</h2>
+    <p class="lead">Enthusiastic JavaScript developer with a passion for front-end development. <br>Technical interests include: JavaScript, Node, Front-end, UX, Web RTC</p>
+    <div class="span12">
+        <h4>Skills</h4>
+        <span class="badge">JavaScript</span>
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+        <span class="badge">Git</span>
+        <span class="badge">Git Flow</span>
+        <span class="badge">Angular.JS</span>
+        <span class="badge">Require.JS</span>
+        <span class="badge">Protractor</span>
+        <span class="badge">jQuery</span>
+        <span class="badge">Node.JS</span>
+        <span class="badge">Java</span>
+        <span class="badge">Spring MVC</span>
+        <span class="badge">.NET MVC</span>
+    </div>
 </template>
 
 <template name="navItems">
@@ -49,13 +78,33 @@
 </template>
 
 <template name = "fullProject">
-    <h2>{{ title }}</h2>
-    <p>{{ startDate }}</p>
-    <p>{{endDate}}</p>
-    <div>{{duties}}</div>
-    <div>{{env}}</div>
+    <h3>{{ title }}</h3>
+    <div class="span12">
+        {{startDate}} - {{endDate}}
+    </div>
+    <div class="span12">
+        <strong>Tasks</strong>
+        <ul>
+            {{#each duties}}
+            <li>{{desc}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="span12">Environment: {{env}}</div>
+    <div class="span12">
+        <a href="{{pathFor 'projects'}}" class="btn btn-default">Back to Project Listing</a>
+    </div>
 </template>
 
 <template name="work">
-
+    <strong>Work Experience</strong>
+    <ul class="list-group">
+        <li class="list-group-item">ILM Professional Services : Consultant  June 2014 - Present</li>
+        <li class="list-group-item">Slalom Consulting : Software Engineer  June 2013 - June 2014 </li>
+        <li class="list-group-item">Cars.com : Technology Intern  January 2013 - June 2013</li>
+    </ul>
+    <p>
+        Depaul University, Chicago IL  2013 <br>
+        B.S. in Computer Science, Emphasis in Software Engineering
+    </p>
 </template>
